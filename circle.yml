@@ -20,6 +20,10 @@ dependencies:
     - bower install
   cache_directories:
     - bower_components
+test:
+  override:
+    - mkdir -p ${CIRCLE_TEST_REPORTS}/ember
+    - ember test
 deployment:
   staging:
     branch: develop
