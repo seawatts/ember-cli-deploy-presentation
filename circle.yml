@@ -18,6 +18,9 @@ dependencies:
     - npm set progress=false
     - npm install -g bower
     - bower install
+    - npm install
+  cache_directories:
+    - bower_components
 deployment:
   staging:
     branch: develop
