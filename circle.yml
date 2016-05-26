@@ -4,8 +4,9 @@ machine:
      GITHUB_COMMIT_USER: ${CIRCLE_USERNAME}
      GITHUB_ISSUE_NUMBER: ${CI_PULL_REQUEST}
      GITHUB_REPO: ${CIRCLE_PROJECT_REPONAME}
-     GITHUB_REPO_NAME: presentations
-     GITHUB_USER_OR_ORGANIZATION: ${CIRCLE_PROJECT_USERNAME}
+     GITHUB_REPO_ORG: seawatts
+     GITHUB_REPO_NAME: ember-cli-deploy-presentation
+     GITHUB_USER_OR_ORGANIZATION: seawatts
      PUBLIC_URL: http://apps.intsm.net/{{versionSha}}
      SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
      S3_BUCKET: apps.intsm.net
@@ -18,6 +19,12 @@ dependencies:
     - npm set progress=false
     - npm install -g bower
     - bower install
+  cache_directories:
+    - bower_components
+test:
+  override:
+    - mkdir -p ${CIRCLE_TEST_REPORTS}/ember
+    - ember test
 deployment:
   staging:
     branch: develop

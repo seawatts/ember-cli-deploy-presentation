@@ -4,6 +4,6 @@
 var pluginPack = require('ember-cli-deploy-sm-pack');
 
 module.exports = function(deployTarget) {
-  return pluginPack.getConfiguration('', 'Code', deployTarget);
+  return pluginPack.getConfiguration('', 'EmberCliDeployPresentation', deployTarget);
 };
 

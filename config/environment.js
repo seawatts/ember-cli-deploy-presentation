@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-cli-deploy-test-app',
+    modulePrefix: 'ember-cli-deploy-presentation',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
